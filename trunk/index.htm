@@ -1,0 +1,96 @@
+﻿<!--
+
+  Main Template integrates alla the functions into a website
+
+  Copyright (c) 2009 Hellenic National Documentation Center, yapiviewer@gmail.com
+
+	This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+	This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+	without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along with this program; 
+	if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+-->
+
+
+<!--DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Zoom Pan Rotate Bright - Image Adjustments Functionalities</title>
+	
+<!------------------------ JQUERY LIBRARIES ------------------------>	
+	<script type="text/javascript" src="js/jquery-1.3.2-drag-slider.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7-drag-slider.custom.min.js"></script>
+
+<!------------------------ JQUERY CSS (FOR DRAG AND SLIDERS) ------------------------>	
+	<link type="text/css" href="css/jquery-ui-1.7-drag-slider.custom.css" rel="stylesheet" />
+	
+<!------------------------ LIBRARY FOR CANVAS ELEMENT, CRUCIAL FOR WORKING IN INTERNET EXPLORER - EXCANVAS ------------------------>	
+	<!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+	
+<!------------------------ CORE LIBRARY AND ROTATE FUNCTIONALITY ------------------------>	
+	<script type="text/javascript" src="js/rotator.js"></script>
+	
+<!------------------------ LIBRARY FOR IMAGE ADJUSTMENT FUNCTIONALITIES ------------------------>	
+	<script type="text/javascript" src="js/img_adjust.js"></script>
+	
+	
+<!------------------------ General CSS ------------------------>	
+	<link rel="stylesheet" href="css/general.css" type="text/css" media="screen" charset="utf-8" />
+
+<!------------------------ CONFIGURATION FILE ------------------------>	
+ 	<script type="text/javascript" src="js/conf.js"></script>
+
+
+</head>
+
+<body>
+<script type="text/javascript">
+
+	document.write('<img src="'+img_path+'" style="visibility: visible; display: none;" id="imgOr" onload="javascript:imgID=\'imgOr\';initiate();"/>');
+</script>
+	
+
+		<div id="main-frame">
+			<div class="image_container" id="image_container">
+				<center>
+
+					<div id="image-rotator">
+						<div id="funcButton">
+						</div>
+						
+						<div id="demo-frame">
+							<div id="move">
+								<canvas id="draggable"></canvas>
+								<img src="" alt="" id="zimg"/>
+
+								
+								<!----------- START - IMPORTANT FOR BRIGHTNESS/CONTRAST FUNCTIONALITY ----------->
+								<!----------- LIBRARY FOR BRIGHTNESS/CONTRAST FUNCTIONALITY -----------> 
+								<script type="text/javascript" src="js/pixastic.custom.js"></script>
+								
+								
+								<!----------- CHECKING IF THE BROWSER SUPPORTS THE 'hasCanvasImageData' FUNCTION AND ADD A CANVAS ELEMENT FOR BRIGHTNESS/CONTRAST FUNCTIONALITY ----------->
+								<script language="javascript">
+									if (Pixastic.Client.hasCanvasImageData()){
+										document.write('<scr' + 'ipt src="js/conf_adjust.js">' + '<\/script>');
+										document.write('<canvas id="tmp" style="position: static;"></canvas>');
+									}
+								</script>
+								<!----------- END - IMPORTANT FOR BRIGHTNESS/CONTRAST FUNCTIONALITY ----------->
+							</div>
+							
+						</div>
+					</div>	
+				</center>
+			</div>
+		</div>
+
+
+</body>
+
+</html>
