@@ -1,0 +1,28 @@
+-------------------------------
+YAPI Viewer
+-------------------------------
+
+Description:
+-----------
+This application integrates a variety of image manipulation functions for usage in any website.
+The image manipulations are summarized as follow:
+
+    * Zoom the image.
+    * Rotate the image.
+    * Pan the image.
+    * Add brightness to the colors of the image.
+    * Add contrast to the colors of the image.
+
+
+Copyright © 2009 Hellenic National Documentation Center, yapiviewer@gmail.com
+
+-- Image Panning
+Uses jQuery UI CSS Framework, Copyright (c) 2009 AUTHORS.txt (http://jqueryui.com/about)
+
+-- Adding brightness/contrast to the colors of the image 
+Uses Pixastic Lib - Core Functions - v0.1.1, Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com, http://blog.nihilogic.dk/
+
+-- Canvas Element for IE
+Uses ExplorerCanvas, Copyright 2006 Google Inc.
+
+All supplementary licenses are included in this folder.
